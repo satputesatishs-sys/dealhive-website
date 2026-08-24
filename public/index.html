@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealHive — All-in-One Multi-Category Deal Engine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <h1>🛍️ DealHive</h1>
+        <p>Real Deals from Amazon, boAt, Snitch, Campus Shoes & More</p>
+      </div>
+      <button class="primary-btn" onclick="triggerSync()">🔄 Sync Now</button>
+    </header>
+
+    <!-- ANALYTICS SECTION -->
+    <div class="analytics">
+      <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div class="stat-value" id="stTotal">0</div>
+        <div class="stat-label">Total Products</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+        <div class="stat-value" id="stActive" style="color:#059669;">0</div>
+        <div class="stat-label">Active Deals</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-value" id="stClicks" style="color:#7c3aed;">0</div>
+        <div class="stat-label">Total Clicks</div>
+      </div>
+    </div>
+
+    <!-- TRACKING INFO -->
+    <div class="tracking-info">
+      <span>🤖 Tracking: <strong>Amazon • boAt • Snitch • Campus Shoes • Souled Store • Noise</strong></span>
+      <span id="sync-status" style="font-size: 12px; color: #64748b;">Auto-sync every 15 minutes</span>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterDeals('ALL', this)">All Deals</button>
+      <button class="filter-btn" onclick="filterDeals('Clothing & Fashion', this)">👔 Clothing</button>
+      <button class="filter-btn" onclick="filterDeals('Footwear', this)">👟 Footwear</button>
+      <button class="filter-btn" onclick="filterDeals('Electronics', this)">🎧 Electronics</button>
+      <button class="filter-btn" onclick="filterDeals('Accessories', this)">🕶️ Accessories</button>
+      <button class="filter-btn" onclick="filterDeals('Home & Kitchen', this)">🏠 Home</button>
+      <button class="filter-btn" onclick="filterDeals('Amazon', this)">📦 Amazon</button>
+    </div>
+
+    <!-- STATUS MESSAGE -->
+    <div id="status" class="status-message"></div>
+
+    <!-- DEALS GRID -->
+    <div id="dealsGrid" class="grid">
+      <p style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #94a3b8;">Loading verified platform deals...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
